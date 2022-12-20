@@ -3,6 +3,8 @@
 
 	(def cats [])
 
+	(js* "$: doubled = ~{}" (* 2 (count cats)))
+
 	(defn addCat []
 	    (let [new-cat-id (+ 1 (count cats))
 			  new-cat {:id 1 :name "Danger Cat"}]
@@ -14,6 +16,8 @@
 <button on:click={addCat}>
 	Add cat
 </button>
+
+<p>Total number of cats {doubled}</p>
 
 <ul>
     {#each cats as cat, i}
