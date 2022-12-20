@@ -9,9 +9,3 @@ This repo defines a [svelte preprocessor](https://kit.svelte.dev/docs/integratio
 ## Setup
 `npm install`  
 `npm run dev`
-
-## Unsolved/Known issues
-Does not emit `export let` javascript which is needed for [svelte props](https://svelte.dev/tutorial/declaring-props)
-
-Does not emit `$:` javascript which is needed for [svelte reactivity](https://svelte.dev/tutorial/reactive-declarations)
-
