@@ -1,0 +1,1 @@
+{:lint-as {macros/defreactive clojure.core/def}}

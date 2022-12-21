@@ -1,0 +1,16 @@
+{:pods {org.babashka/fswatcher {:version "0.0.4"}}
+ :paths ["."
+         "."]
+ :tasks
+ {:requires ([tasks :as t])
+
+  vite-dev (shell "npm run dev")
+  
+  compile-squint (t/compile-squint {})
+  
+  watch-cljs (t/watch-cljs {})
+
+  -dev {:depends [compile-squint vite-dev watch-cljs]}
+
+  dev {:doc "Run vite dev + watcher to re-build .cljs files"
+       :task (run '-dev {:parallel true})}}}
