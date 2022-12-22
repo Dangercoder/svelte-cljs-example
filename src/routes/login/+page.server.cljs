@@ -6,7 +6,7 @@
   (when (.get cookies "jwt")
     (throw (redirect 307 "/"))))
 
-(defn set-cookie-and-return [value cookies]
+(defn set-cookie-and-redirect [value cookies]
   (.set cookies :jwt value {:path "/"})
   (throw (redirect 307 "/")))
 
@@ -25,7 +25,7 @@
           (.-user)
           js/JSON.stringify
           js/btoa
-          (set-cookie-and-return cookies)))))
+          (set-cookie-and-redirect cookies)))))
 
 ;; Form Actions
 (def actions {:default login})
